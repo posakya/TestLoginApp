@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bck"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="@drawable/edit_text_bck"
+        android:ems="10"
+        android:fontFamily="@font/roboto"
+        android:hint="First Name"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_bck"
+        android:ems="10"
+        android:hint="Last Name"
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editFirstName" />
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_bck"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textWebEmailAddress"
+        android:padding="12dp"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editLastName" />
+
+    <Button
+        android:foreground="@drawable/ripple_effect"
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btn_bck"
+        android:onClick="save"
+        android:text="Save"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+
+</android.support.constraint.ConstraintLayout>
