@@ -20,6 +20,7 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationRequest;
 import com.google.firebase.database.FirebaseDatabase;
+import com.myriad.sample_library.validation.Validation;
 import com.myriad.testloginapp.adapter_class.CheckGpsEnable;
 import com.myriad.testloginapp.adapter_class.GpsCoordinate;
 import com.myriad.testloginapp.adapter_class.LoginClass;
@@ -80,10 +81,12 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Last name required", Toast.LENGTH_SHORT).show();
         }else if (email.isEmpty()){
             Toast.makeText(this, "Email required", Toast.LENGTH_SHORT).show();
+        }else if (!email.matches(Validation.emailPattern)){
+            Toast.makeText(this, "Email is not valid", Toast.LENGTH_SHORT).show();
         }else{
             loginClass = new LoginClass(getApplicationContext());
             LoginClass.tree = "User";
-            loginClass.postData(LoginClass.tree, FirebaseDatabase.getInstance().getReference().push().getKey(),fName,lName,email, Double.valueOf(deviceId), GpsCoordinate.lat, GpsCoordinate.lng,"imadol");
+            loginClass.postData(LoginClass.tree, FirebaseDatabase.getInstance().getReference().push().getKey(),fName,lName,email, Double.valueOf(deviceId), GpsCoordinate.lat, GpsCoordinate.lng,"Thapathali");
         }
     }
 }

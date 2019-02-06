@@ -24,7 +24,7 @@ public class LoginClass {
     public void postData(String tree, final String id, final String first_name, final String last_name, final String email, final Double device_id, final Double latitude, final Double longitude, final String street_address){
 
         Location location = new Location(latitude,longitude,street_address);
-        User user = new User();
+        final User user = new User();
         user.setDevice_id(device_id);
         user.setEmail(email);
         user.setFirst_name(first_name);
@@ -49,6 +49,7 @@ public class LoginClass {
                 }else{
 
                     Toast.makeText(context, "Successfully saved data!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Response : "+user, Toast.LENGTH_SHORT).show();
                     SharedPreferenceClasses sharedPreferenceClasses = new SharedPreferenceClasses(context);
 
                     sharedPreferenceClasses.saveData(id,first_name,last_name,email,String.format("%.2f",latitude),String.format("%.2f",longitude),street_address,String.format("%.2f",device_id));

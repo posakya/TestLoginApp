@@ -140,8 +140,13 @@ public class GpsCoordinate  implements LocationListener {
 
     @Override
     public void onLocationChanged(Location location) {
+        if (location != null){
 
-        Toast.makeText(mContext, ""+location.getLatitude(), Toast.LENGTH_SHORT).show();
+            lat = location.getLatitude();
+            lng = location.getLongitude();
+        }
+
+//        Toast.makeText(mContext, ""+location.getLatitude(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
